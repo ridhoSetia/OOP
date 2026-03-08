@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Crud {
-    public static <T> void tampilkanData(ArrayList<T> daftar, Scanner input) throws Exception {
+    public static <NamaClass> void tampilkanData(ArrayList<NamaClass> daftar, Scanner input) throws Exception {
         if (daftar.isEmpty()) {
             input.nextLine(); 
 
@@ -17,7 +17,7 @@ public class Crud {
 
         System.out.println("\n--- Data ---");
             for (int i = 0; i < daftar.size(); i++) {
-                T objek = daftar.get(i);
+                NamaClass objek = daftar.get(i);
                 System.out.print((i + 1) + ". "); // Menampilkan nomor urut
                 
                 java.lang.reflect.Field[] fields = objek.getClass().getDeclaredFields();
@@ -34,11 +34,11 @@ public class Crud {
         input.nextLine(); 
     }
 
-    public static <T> void tambahData(ArrayList<T> daftar, Scanner input, Class<T> tipe) throws Exception {
+    public static <NamaClass> void tambahData(ArrayList<NamaClass> daftar, Scanner input, Class<NamaClass> tipe) throws Exception {
         // 1. Cari constructor, lalu paksa buka aksesnya (untuk akses antar package)
-        java.lang.reflect.Constructor<T> constructor = tipe.getDeclaredConstructor();
+        java.lang.reflect.Constructor<NamaClass> constructor = tipe.getDeclaredConstructor();
         constructor.setAccessible(true); 
-        T objekBaru = constructor.newInstance();
+        NamaClass objekBaru = constructor.newInstance();
 
         // 2. Ambil semua field yang ada di class tersebut secara dinamis
         java.lang.reflect.Field[] fields = tipe.getDeclaredFields();
@@ -65,7 +65,7 @@ public class Crud {
         input.nextLine(); 
     }
 
-    public static <T> void updateData(ArrayList<T> daftar, Scanner input) throws Exception {
+    public static <NamaClass> void updateData(ArrayList<NamaClass> daftar, Scanner input) throws Exception {
         tampilkanData(daftar, input);
         if (daftar.isEmpty()) return;
 
@@ -74,7 +74,7 @@ public class Crud {
         input.nextLine(); // Bersihkan buffer
 
         if (nomor > 0 && nomor <= daftar.size()) {
-            T objek = daftar.get(nomor - 1);
+            NamaClass objek = daftar.get(nomor - 1);
             java.lang.reflect.Field[] fields = objek.getClass().getDeclaredFields();
 
             System.out.println("Masukkan data baru:");
@@ -103,7 +103,7 @@ public class Crud {
         input.nextLine(); 
     }
 
-    public static <T> void hapusData(ArrayList<T> daftar, Scanner input) throws Exception {
+    public static <NamaClass> void hapusData(ArrayList<NamaClass> daftar, Scanner input) throws Exception {
         tampilkanData(daftar, input);
         if (daftar.isEmpty()) return;
 
