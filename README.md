@@ -1,4 +1,4 @@
-# Laporan Posttest 1 - Sistem Manajemen Bengkel
+# Laporan Posttest 1 
 
 Proyek ini adalah aplikasi manajemen data bengkel sederhana menggunakan bahasa pemrograman Java dengan konsep **Object-Oriented Programming (OOP)**. Aplikasi ini memungkinkan pengelolaan data Mekanik, Sparepart, dan Pelanggan melalui operasi CRUD (Create, Read, Update, Delete) yang diimplementasikan secara dinamis menggunakan *Java Reflection*.
 
@@ -23,8 +23,6 @@ Sesuai dengan konfigurasi VS Code, struktur folder proyek ini adalah sebagai ber
 - `src/`: Berisi kode sumber Java (.java).
     - `Crud/`: Package untuk logika utama CRUD dan pembersihan layar.
     - `Main.java`: Kelas utama yang berisi definisi objek dan alur program.
-- `bin/`: Berisi file hasil kompilasi (.class).
-
 ---
 
 ## Implementasi Fitur
@@ -43,16 +41,38 @@ Menghapus data tertentu dari `ArrayList` berdasarkan indeks nomor yang dipilih p
 
 ---
 
-## Cara Menjalankan Program
-1. Pastikan Java Development Kit (JDK) sudah terinstal.
-2. Buka folder proyek menggunakan Visual Studio Code.
-3. Pastikan struktur `src` dan `bin` sudah terdeteksi di `settings.json`.
-4. Jalankan file `src/Main.java`.
-5. Pilih menu utama (1-4) untuk masuk ke manajemen entitas tertentu atau keluar dari program.
+## Alur Program
+### 1. Menu Utama
+![alt text](images/image.png) <br>
+Misal pilih menu mekanik
 
+### 2. CRUD di menu mekanik
+![alt text](images/image-1.png) <br>
+disini akan dicontohkan menggunakan menu Mekanik:
+- Tambah Mekanik (Create)
+- Liat Daftar Mekanik (Read)
+- Update Mekanik (Update)
+- Hapus Mekanik (Delete)
+
+1. Tambah Mekanik <br>
+![alt text](images/image-2.png)
+
+2. Liat Daftar Mekanik <br>
+![alt text](images/image-3.png)
+
+3. Update Mekanik <br>
+![alt text](images/image-4.png) <br>
+![alt text](images/image-5.png)
+
+4. Hapus Mekanik <br>
+![alt text](images/image-6.png) <br>
+![alt text](images/image-7.png)
+
+5. Keluar <br>
+![alt text](images/image-8.png) <br>
+![alt text](images/image-9.png)
 ---
 
 ## Analisis OOP yang Digunakan
 - **Encapsulation**: Meskipun field pada kelas model (Mekanik, Sparepart, Pelanggan) tidak menggunakan akses modifier privat secara eksplisit, akses data diatur melalui metode di dalam kelas `Crud`.
 - **Generics**: Penggunaan `<NamaClass>` pada metode-metode di `Crud.java` memungkinkan fleksibilitas tipe data.
-- **Abstraction**: Pengguna hanya berinteraksi dengan menu tanpa perlu tahu bagaimana Java Reflection bekerja di latar belakang untuk mengakses field secara dinamis.
