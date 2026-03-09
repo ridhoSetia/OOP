@@ -71,8 +71,3 @@ disini akan dicontohkan menggunakan menu Mekanik:
 5. Keluar <br>
 ![alt text](images/image-8.png) <br>
 ![alt text](images/image-9.png)
----
-
-## Analisis OOP yang Digunakan
-- **Encapsulation**: Meskipun field pada kelas model (Mekanik, Sparepart, Pelanggan) tidak menggunakan akses modifier privat secara eksplisit, akses data diatur melalui metode di dalam kelas `Crud`.
-- **Generics**: Penggunaan `<NamaClass>` pada metode-metode di `Crud.java` memungkinkan fleksibilitas tipe data.
