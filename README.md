@@ -21,7 +21,8 @@ Keunggulan program ini adalah penggunaan **Generic Method** dan **Java Reflectio
 ## Struktur Folder
 Sesuai dengan konfigurasi VS Code, struktur folder proyek ini adalah sebagai berikut:
 - `src/`: Berisi kode sumber Java (.java).
-    - `Crud/`: Package untuk logika utama CRUD dan pembersihan layar.
+    - `Crud/*`: Package untuk logika utama CRUD.
+    - `Crud/Helper.java`: Package untuk program pendukung seperti clear screen.
     - `Main.java`: Kelas utama yang berisi definisi objek dan alur program.
 ---
 
