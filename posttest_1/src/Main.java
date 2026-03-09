@@ -1,36 +1,10 @@
 import java.util.Scanner;
 
-import Crud.Clear;
+import static Crud.Helper.jeda;
 
 import java.util.ArrayList;
-import static Crud.Crud.*;
 
-class Sparepart {
-    String id;
-    String nama;
-    float harga;
-
-    Sparepart() {
-    }
-}
-
-class Mekanik {
-    String id;
-    String nama;
-    String spesialisasi;
-
-    Mekanik() {
-    }
-}
-
-class Pelanggan {
-    String nama;
-    String jenisKendaraan;
-    String keluhan;
-
-    Pelanggan() {
-    }
-}
+import Crud.*;
 
 public class Main {
     static void mekanikList(Scanner input) throws Exception {
@@ -38,21 +12,25 @@ public class Main {
         int pilihan;
 
         do {
-            menuCRUD("MEKANIK");
+            Helper.menuCRUD("MEKANIK");
 
             pilihan = input.nextInt();
             switch (pilihan) {
                 case 1:
-                    tampilkanData(daftarMekanik, input);
+                    Mekanik.tampilkanMekanik(daftarMekanik);
+                    jeda(input);
                     break;
                 case 2:
-                    tambahData(daftarMekanik, input, Mekanik.class);
+                    Mekanik.tambahMekanik(daftarMekanik, input);
+                    jeda(input);
                     break;
                 case 3:
-                    updateData(daftarMekanik, input);
+                    Mekanik.updateMekanik(daftarMekanik, input);
+                    jeda(input);
                     break;
                 case 4:
-                    hapusData(daftarMekanik, input);
+                    Mekanik.hapusMekanik(daftarMekanik, input);
+                    jeda(input);
                     break;
                 case 5:
                     System.out.println("Exit Menu!\n");
@@ -68,21 +46,25 @@ public class Main {
         int pilihan;
 
         do {
-            menuCRUD("SPAREPART");
+            Helper.menuCRUD("SPAREPART");
 
             pilihan = input.nextInt();
             switch (pilihan) {
                 case 1:
-                    tampilkanData(daftarSparepart, input);
+                    Sparepart.tampilkanSparepart(daftarSparepart);
+                    jeda(input);
                     break;
                 case 2:
-                    tambahData(daftarSparepart, input, Sparepart.class);
+                    Sparepart.tambahSparepart(daftarSparepart, input);
+                    jeda(input);
                     break;
                 case 3:
-                    updateData(daftarSparepart, input);
+                    Sparepart.updateSparepart(daftarSparepart, input);
+                    jeda(input);
                     break;
                 case 4:
-                    hapusData(daftarSparepart, input);
+                    Sparepart.hapusSparepart(daftarSparepart, input);
+                    jeda(input);
                     break;
                 case 5:
                     System.out.println("Exit Menu!\n");
@@ -98,21 +80,25 @@ public class Main {
         int pilihan;
 
         do {
-            menuCRUD("PELANGGAN");
+            Helper.menuCRUD("PELANGGAN");
 
             pilihan = input.nextInt();
             switch (pilihan) {
                 case 1:
-                    tampilkanData(daftarPelanggan, input);
+                    Pelanggan.tampilkanPelanggan(daftarPelanggan);
+                    jeda(input);
                     break;
                 case 2:
-                    tambahData(daftarPelanggan, input, Pelanggan.class);
+                    Pelanggan.tambahPelanggan(daftarPelanggan, input);
+                    jeda(input);
                     break;
                 case 3:
-                    updateData(daftarPelanggan, input);
+                    Pelanggan.updatePelanggan(daftarPelanggan, input);
+                    jeda(input);
                     break;
                 case 4:
-                    hapusData(daftarPelanggan, input);
+                    Pelanggan.hapusPelanggan(daftarPelanggan, input);
+                    jeda(input);
                     break;
                 case 5:
                     System.out.println("Exit Menu!\n");
@@ -128,7 +114,7 @@ public class Main {
         int pilihan;
 
         do {
-            Clear.clearScreen();
+            Helper.clearScreen();
             System.out.println("=== MENU BENGKEL  ===");
             System.out.println("1. Mekanik");
             System.out.println("2. Sparepart");
