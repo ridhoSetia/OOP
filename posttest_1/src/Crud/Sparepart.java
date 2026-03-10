@@ -7,7 +7,6 @@ public class Sparepart {
     String id, nama;
     float harga;
 
-    // DRY: Inisialisasi sekaligus dalam satu constructor
     Sparepart(String id, String nama, float harga) {
         this.id = id;
         this.nama = nama;
@@ -22,7 +21,6 @@ public class Sparepart {
         System.out.print("Masukkan harga: ");
         float harga = input.nextFloat();
         
-        // Sesuai Modul 2: Menggunakan Parameterized Constructor dan keyword 'new'
         Sparepart baru = new Sparepart(id, nama, harga);
         daftarSparepart.add(baru);
         System.out.println("Data berhasil ditambahkan!");
@@ -33,7 +31,6 @@ public class Sparepart {
             System.out.println("Daftar kosong.");
             return;
         }
-        // Menggunakan Enhanced For Loop sesuai Modul 1
         for (Sparepart m : daftarSparepart) {
             System.out.println("ID: " + (m.id) + " | Nama: " + m.nama + " | Harga: " + m.harga);
         }

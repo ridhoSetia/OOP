@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class Pelanggan {
     String nama, jenisKendaraan, keluhan;
 
-    // DRY: Inisialisasi sekaligus dalam satu constructor
     Pelanggan(String nama, String jenisKendaraan, String keluhan) {
         this.nama = nama;
         this.jenisKendaraan = jenisKendaraan;
@@ -21,7 +20,6 @@ public class Pelanggan {
         System.out.print("Masukkan Keluhan: ");
         String keluhan = input.next();
         
-        // Sesuai Modul 2: Menggunakan Parameterized Constructor dan keyword 'new'
         Pelanggan baru = new Pelanggan(id, nama, keluhan);
         daftarPelanggan.add(baru);
         System.out.println("Data berhasil ditambahkan!");
@@ -32,7 +30,6 @@ public class Pelanggan {
             System.out.println("Daftar kosong.");
             return;
         }
-        // Menggunakan Enhanced For Loop sesuai Modul 1
         for (Pelanggan m : daftarPelanggan) {
             System.out.println("Nama: " + m.nama + " | Jenis Kendaraan: " + m.jenisKendaraan + " | Keluhan: " + m.keluhan);
         }
