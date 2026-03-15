@@ -23,4 +23,8 @@ public class Mekanik extends Identitas {
     void infoInternal() {
         System.out.println("Akses internal package model.");
     }
+
+    public void panggilInfo() {
+        infoInternal(); // Memanggil metode default dari dalam kelas yang sama
+    }
 }

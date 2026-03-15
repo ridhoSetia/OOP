@@ -15,6 +15,7 @@ public class MekanikService {
         String spesialis = input.next();
         
         Mekanik baru = new Mekanik(id, nama, spesialis);
+        baru.panggilInfo();
         daftarMekanik.add(baru);
         System.out.println("Data berhasil ditambahkan!");
     }
