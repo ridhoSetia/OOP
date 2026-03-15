@@ -73,7 +73,7 @@ disini akan dicontohkan menggunakan menu Mekanik:
 ![alt text](images/image-8.png) <br>
 ![alt text](images/image-9.png)
 
-Berikut adalah draf laporan `README.md` untuk **Posttest 2** yang sudah disesuaikan dengan struktur folder terbaru dan implementasi konsep *Encapsulation* (termasuk penerapan ke-4 jenis *access modifier* untuk poin plus).
+---
 
 ---
 
@@ -107,30 +107,26 @@ Program ini menerapkan **4 jenis Access Modifier** sebagai berikut:
 
 Atribut spesifik pada setiap model (seperti `spesialisasi` pada Mekanik atau `stok` pada Sparepart) dideklarasikan sebagai `private`. Atribut ini tidak dapat diakses langsung dari luar kelas tersebut.
 
-* **Contoh**: `private String spesialisasi;`
-
+* **Contoh**: `private String spesialisasi;` <br><br>
 ![alt text](images/image-10.png)
 
 ### 2. Protected
 
 Digunakan pada atribut `id` dan `nama` di kelas induk `Identitas`. Hal ini memungkinkan *subclass* di *package* lain untuk mengakses atribut tersebut secara langsung melalui pewarisan.
 
-* **Contoh**: `protected String id, nama;`
-
+* **Contoh**: `protected String id, nama;` <br><br>
 ![alt text](images/image-11.png)
 
 ### 3. Public
 
 Digunakan pada kelas layanan (*service*), *constructor*, serta metode *Getter* dan *Setter* agar fungsi program dapat dipanggil oleh kelas `Main`.
 
-* **Contoh**: `public String getNama()` dan `public static void tambahMekanik()`.
-
+* **Contoh**: `public String getNama()` dan `public static void tambahMekanik()`. <br><br>
 ![alt text](images/image-12.png)
 
 ### 4. Default (No Modifier)
 
-Metode `infoInternal()` pada kelas `Mekanik` menggunakan akses *default*, sehingga hanya dapat diakses oleh kelas lain yang berada dalam package `model`.
-
+Metode `infoInternal()` pada kelas `Mekanik` menggunakan akses *default*, sehingga hanya dapat diakses oleh kelas lain yang berada dalam package `model`. <br><br>
 ![alt text](images/image-13.png)
 
 ---
