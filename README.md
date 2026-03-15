@@ -72,3 +72,106 @@ disini akan dicontohkan menggunakan menu Mekanik:
 5. Keluar <br>
 ![alt text](images/image-8.png) <br>
 ![alt text](images/image-9.png)
+
+Berikut adalah draf laporan `README.md` untuk **Posttest 2** yang sudah disesuaikan dengan struktur folder terbaru dan implementasi konsep *Encapsulation* (termasuk penerapan ke-4 jenis *access modifier* untuk poin plus).
+
+---
+
+# Laporan Posttest 2
+
+Proyek ini merupakan pengembangan dari Posttest 1, di mana sistem manajemen bengkel kini telah mengimplementasikan prinsip **Encapsulation** dan **Inheritance**. Data dikelola dengan lebih aman menggunakan *access modifier* dan metode *Getter/Setter*.
+
+## Identitas
+
+* **Nama**: Ridho
+* **NIM**: 2409106029
+
+---
+
+## Perubahan Utama (Posttest 2)
+
+Pada pembaruan ini, struktur kode telah dirapikan ke dalam beberapa *package* untuk mendukung penerapan *access modifier* secara maksimal:
+
+1. **`com.bengkel.core`**: Berisi *base class* `Identitas`.
+2. **`com.bengkel.model`**: Berisi *subclass* (Mekanik, Sparepart, Pelanggan).
+3. **`com.bengkel.service`**: Logika bisnis untuk operasi CRUD.
+4. **`com.bengkel.utils`**: Berisi helper untuk tampilan program, jeda, dan clear terminal.
+
+---
+
+## Implementasi Encapsulation
+
+Program ini menerapkan **4 jenis Access Modifier** sebagai berikut:
+
+### 1. Private
+
+Atribut spesifik pada setiap model (seperti `spesialisasi` pada Mekanik atau `stok` pada Sparepart) dideklarasikan sebagai `private`. Atribut ini tidak dapat diakses langsung dari luar kelas tersebut.
+
+* **Contoh**: `private String spesialisasi;` 
+<br>
+<br>
+![alt text](images/image-10.png)
+
+### 2. Protected
+
+Digunakan pada atribut `id` dan `nama` di kelas induk `Identitas`. Hal ini memungkinkan *subclass* di *package* lain untuk mengakses atribut tersebut secara langsung melalui pewarisan.
+
+* **Contoh**: `protected String id, nama;`
+<br>
+<br>
+![alt text](images/image-11.png)
+
+### 3. Public
+
+Digunakan pada kelas layanan (*service*), *constructor*, serta metode *Getter* dan *Setter* agar fungsi program dapat dipanggil oleh kelas `Main`.
+
+* **Contoh**: `public String getNama()` dan `public static void tambahMekanik()`.
+<br>
+<br>
+![alt text](images/image-12.png)
+
+### 4. Default (No Modifier)
+
+Metode `infoInternal()` pada kelas `Mekanik` menggunakan akses *default*, sehingga hanya dapat diakses oleh kelas lain yang berada dalam package `model`.
+<br>
+<br>
+![alt text](images/image-13.png)
+
+---
+
+## Metode Getter dan Setter
+
+Untuk mengelola data yang bersifat `private`, program menggunakan metode **Getter** untuk mengambil nilai dan **Setter** untuk mengubah nilai secara terkontrol.
+
+**Contoh Implementasi pada Sparepart:**
+
+```java
+public int getStok() { 
+    return stok; 
+}
+public void setStok(int stok) { 
+    this.stok = stok; 
+}
+```
+
+---
+
+## Struktur Proyek
+
+```text
+src/com/bengkel/
+├── core/
+│   └── Identitas.java      (Base Class - Protected)
+├── model/
+│   ├── Mekanik.java        (Private, Default)
+│   ├── Pelanggan.java
+│   └── Sparepart.java
+├── service/                (Public CRUD)
+│   ├── MekanikService.java
+│   ├── PelangganService.java
+│   └── SparepartService.java
+├── utils/
+│   └── Helper.java         (Utilities)
+└── Main.java               (Entry Point)
+
+```
