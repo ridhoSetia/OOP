@@ -75,8 +75,6 @@ disini akan dicontohkan menggunakan menu Mekanik:
 
 ---
 
----
-
 # Laporan Posttest 2
 
 Proyek ini merupakan pengembangan dari Posttest 1, di mana sistem manajemen bengkel kini telah mengimplementasikan prinsip **Encapsulation** dan **Inheritance**. Data dikelola dengan lebih aman menggunakan *access modifier* dan metode *Getter/Setter*.
